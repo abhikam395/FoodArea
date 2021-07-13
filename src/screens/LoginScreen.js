@@ -6,7 +6,6 @@ import LoginSendOptButton from '../components/LoginSentOptButton';
 import LoginEmailButton from '../components/LoginEmailButton';
 import LoginFBButton from '../components/LoginFBButton';
 import LoginGoogleButton from '../components/LoginGoogeButton';
-import { Link } from '@react-navigation/native';
 
 export default class LoginScreen extends Component{
     render(){
