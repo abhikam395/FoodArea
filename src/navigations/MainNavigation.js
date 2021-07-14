@@ -11,7 +11,7 @@ export default function MainNavigation(){
     return (
         <NavigationContainer>
             <MainStack.Navigator
-                initialRouteName="Location"
+                initialRouteName="Home"
                 screenOptions={{headerShown: false}}>
                 <MainStack.Screen 
                     name="Home" 

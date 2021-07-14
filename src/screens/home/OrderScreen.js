@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import HomeHeaderComponent from '../../components/HomeHeaderComponent';
+import SearchbarComponent from '../../components/SearchbarComponent';
 
 export default class OrderScreen extends Component{
     render(){
         return (
             <View style={styles.container}>
-                <Text>Order Screen</Text>
+                <StatusBar backgroundColor="white" barStyle="dark-content"/>
+                <HomeHeaderComponent />
+                <SearchbarComponent />
             </View>
         )
     }
@@ -13,6 +17,7 @@ export default class OrderScreen extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: 'white'
     }
 })
