@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginVertical: 10,
         alignItems: 'center',
-        marginHorizontal: 10,
         borderRadius: 10,
         elevation: 5,
         borderWidth: 1,

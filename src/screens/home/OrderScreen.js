@@ -1,16 +1,26 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import {View, Text, StyleSheet, StatusBar, FlatList} from 'react-native';
+import FoodCategoriesComponent from '../../components/FoodCategoriesComponent';
 import HomeHeaderComponent from '../../components/HomeHeaderComponent';
+import HomeTagsComponent from '../../components/HomeTagsComponent';
 import SearchbarComponent from '../../components/SearchbarComponent';
+import HomeRestaurantsComponent from '../../components/HomeRestaurantsComponent';
 
 export default class OrderScreen extends Component{
     render(){
         return (
-            <View style={styles.container}>
-                <StatusBar backgroundColor="white" barStyle="dark-content"/>
-                <HomeHeaderComponent />
-                <SearchbarComponent />
-            </View>
+            <FlatList
+                listKey={0}
+                style={styles.container} 
+                ListEmptyComponent={
+                    <>
+                        <StatusBar backgroundColor="white" barStyle="dark-content"/>
+                        <HomeHeaderComponent />
+                        <SearchbarComponent />
+                        <FoodCategoriesComponent />
+                        <HomeRestaurantsComponent />
+                    </>
+                }/>
         )
     }
 }
@@ -18,6 +28,7 @@ export default class OrderScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        padding: 10,
     }
 })
