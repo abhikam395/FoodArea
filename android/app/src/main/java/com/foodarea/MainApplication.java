@@ -1,4 +1,4 @@
-package com.foodarea;
+package com.abhikam395.foodarea;
 
 import android.app.Application;
 import android.content.Context;
