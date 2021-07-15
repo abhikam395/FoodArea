@@ -2,9 +2,16 @@ import React from 'react';
 import {StyleSheet, TouchableOpacity, Text} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-export default function LoginEmailButton(){
+export default function LoginEmailButton({navigation}){
+
+    function navigateToLocationScreen(){
+        navigation.replace('Location')
+    }
+
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity 
+            style={styles.container}
+            onPress={() => navigateToLocationScreen()}>
             <Entypo 
                 name="mail" 
                 size={34} 

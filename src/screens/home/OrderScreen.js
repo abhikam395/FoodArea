@@ -11,11 +11,12 @@ export default class OrderScreen extends Component{
         return (
             <FlatList
                 listKey={0}
-                style={styles.container} 
+                style={styles.container}
+                showsVerticalScrollIndicator={false}
                 ListEmptyComponent={
                     <>
                         <StatusBar backgroundColor="white" barStyle="dark-content"/>
-                        <HomeHeaderComponent />
+                        <HomeHeaderComponent {...this.props}/>
                         <SearchbarComponent />
                         <FoodCategoriesComponent />
                         <HomeRestaurantsComponent />

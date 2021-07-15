@@ -5,6 +5,7 @@ import { RED } from '../utils/colors';
 
 export default class HomeHeaderComponent extends Component{
     render(){
+        let {navigation} = this.props;
         return (
             <View style={styles.container}>
                 <Fontisto 
@@ -16,7 +17,9 @@ export default class HomeHeaderComponent extends Component{
                     <Text style={styles.address}>Adarsh Vihar, Adhoiwala</Text>
                     <View style={styles.line}/>                
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.profile}>
+                <TouchableOpacity 
+                    style={styles.profile} 
+                    onPress={() => navigation.navigate('Profile')}>
                     <Text style={styles.firstLetter}>S</Text>
                 </TouchableOpacity>
             </View>

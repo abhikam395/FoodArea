@@ -8,6 +8,7 @@ import LoginFBButton from '../components/LoginFBButton';
 import LoginGoogleButton from '../components/LoginGoogeButton';
 
 export default class LoginScreen extends Component{
+
     render(){
         return (
             <>
@@ -20,7 +21,7 @@ export default class LoginScreen extends Component{
                         <Text style={styles.dividerLabel}>OR</Text>
                         <View style={styles.line}/>
                    </View>
-                   <LoginEmailButton />
+                   <LoginEmailButton {...this.props}/>
                    <View style={styles.buttons}>
                        <LoginFBButton />
                        <LoginGoogleButton />

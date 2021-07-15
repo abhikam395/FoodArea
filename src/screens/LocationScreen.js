@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, StatusBar, Text } from 'react-native';
-import LocationButton from '../../components/LocationButton';
-import LocationSetLocationButton from '../../components/LocationSetLocationButton';
+import LocationButton from '../components/LocationButton';
+import LocationSetLocationButton from '../components/LocationSetLocationButton';
 
 export default class LocationScreen extends Component{
     render(){
@@ -11,8 +11,8 @@ export default class LocationScreen extends Component{
                 <View style={styles.container}>
                     <Text style={styles.label1}>Hi, nice to meet you!</Text>
                     <Text style={styles.label2}>Set your location to start exploring restaurants around you</Text>
-                    <LocationButton />
-                    <LocationSetLocationButton />
+                    <LocationButton {...this.props}/>
+                    <LocationSetLocationButton {...this.props}/>
                     <Text style={styles.bottomLabel}>We only access your location while you are using the app to improve your experience.</Text>
                 </View>
             </>

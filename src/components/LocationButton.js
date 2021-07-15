@@ -2,9 +2,16 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { RED } from '../utils/colors';
 
-export default function LocationButton(){
+export default function LocationButton({navigation}){
+
+    function navigateToHomeScreen(){
+        navigation.replace('Home')
+    }
+
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity 
+            style={styles.container}
+            onPress={() => navigateToHomeScreen()}>
             <Text style={styles.label}>Use current location</Text>
         </TouchableOpacity>
     )
