@@ -64,6 +64,9 @@ export default class HomeRestaurantComponent extends Component{
                         <Text style={styles.restaurantType}>Pizza, Italian</Text>
                         <Text style={styles.price}>&#8377; 200 for one</Text>
                     </View>
+                    {restaurant.id % 2 == 0 && (
+                        <Text style={styles.closeTimeLabel}>Closes in 40 mins</Text>
+                    )}
                     <View style={styles.line}/>
                     <View style={styles.row}>
                         <Image source={LeafIcon} style={styles.leafIcon} />
@@ -216,5 +219,10 @@ const styles = StyleSheet.create({
     offerLabel: {
         fontSize: 13,
         color: 'white'
+    },
+    closeTimeLabel: {
+        color: 'red',
+        fontSize: 11,
+        marginVertical: 5
     }
 })
