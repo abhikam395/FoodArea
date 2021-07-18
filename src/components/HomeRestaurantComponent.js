@@ -14,16 +14,31 @@ export default class HomeRestaurantComponent extends Component{
         this.state = {
             bookmark: false
         }
+        this.addToBookmark = this.addToBookmark.bind(this);
+        this.navigateToRestaurantScreen = this.navigateToRestaurantScreen.bind(this);
+    }
+
+    navigateToRestaurantScreen(){
+        let {navigation} = this.props;
+        navigation.navigate('Restaurant');
+    }
+
+    addToBookmark(){
+        let {bookmark} = this.state;
+        this.setState({bookmark: !bookmark});
     }
 
     render(){
         let {restaurant } = this.props;
         let {bookmark} = this.state;
         return (
-            <View style={styles.container}>
+            <TouchableOpacity 
+                style={styles.container} 
+                onPress={this.navigateToRestaurantScreen}>
                 <View style={styles.imageContainer}>
                     <Image source={{uri: restaurant.image}} style={styles.image}/>
-                    <TouchableOpacity style={styles.bookmarkButton}>
+                    <TouchableOpacity 
+                        style={styles.bookmarkButton}>
                         <MaterialIcons 
                             name={bookmark ? "bookmark": "bookmark-border"}
                             size={20}
@@ -78,7 +93,7 @@ export default class HomeRestaurantComponent extends Component{
                             size={13}/>
                     </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 }
@@ -168,7 +183,9 @@ const styles = StyleSheet.create({
         right: 0,
         margin: 15,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        elevation: 4,
+        zIndex: 4
     },
     promoted: {
         position: 'absolute',

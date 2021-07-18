@@ -12,7 +12,7 @@ export default class HomeRestaurantsComponent extends Component{
                     listKey={2}
                     style={styles.list}
                     data={RESTAURANTS}
-                    renderItem={({item}) => <HomeRestaurantComponent restaurant={item}/>}
+                    renderItem={({item}) => <HomeRestaurantComponent restaurant={item} {...this.props}/>}
                     keyExtractor={item => item.id.toString()}
                     // ItemSeparatorComponent={() => (<View style={styles.separator}/>)}
                 />

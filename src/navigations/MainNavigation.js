@@ -1,18 +1,27 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeNavigation from './HomeNavigation';
 import LoginScreen from '../screens/LoginScreen';
 import LocationScreen from '../screens/LocationScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import RestaurantScreen from '../screens/RestaurantScreen';
 
 const MainStack = createStackNavigator();
 
+const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: 'white',
+    },
+};
+
 export default function MainNavigation(){
     return (
-        <NavigationContainer>
+        <NavigationContainer theme={MyTheme}>
             <MainStack.Navigator
-                initialRouteName="Login"
+                initialRouteName="Restaurant"
                 screenOptions={{headerShown: false}}>
                 <MainStack.Screen 
                     name="Home" 
@@ -28,6 +37,10 @@ export default function MainNavigation(){
                 <MainStack.Screen
                     name="Profile"
                     component={ProfileScreen}
+                />
+                <MainStack.Screen
+                    name="Restaurant"
+                    component={RestaurantScreen}
                 />
             </MainStack.Navigator>
         </NavigationContainer>

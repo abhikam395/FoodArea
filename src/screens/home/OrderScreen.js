@@ -19,7 +19,7 @@ export default class OrderScreen extends Component{
                         <HomeHeaderComponent {...this.props}/>
                         <SearchbarComponent />
                         <FoodCategoriesComponent />
-                        <HomeRestaurantsComponent />
+                        <HomeRestaurantsComponent {...this.props}/>
                     </>
                 }/>
         )
@@ -29,7 +29,6 @@ export default class OrderScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
         padding: 10,
     }
 })
