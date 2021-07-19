@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, FlatList } from 'react-native';
 import RestaurantHeader from '../components/RestaurantHeader';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import RestaurantTabNavigation from '../navigations/RestaurantTabNavigation';
@@ -11,30 +11,35 @@ export default class RestaurantScreen extends Component{
         return (
             <View style={styles.container}>
                 <RestaurantHeader />
-                <View style={styles.restaurantInfo}>
-                    <View style={styles.leftContainer}>
-                        <Text style={styles.title}>Garden Of Taste</Text>
-                        <Text style={styles.foodtype}>North Indian, Chinese, Mughlai</Text>
-                        <Text style={styles.address}>Dharampur, Dehradun</Text>
-                    </View>
-                    <View style={styles.rightContainer}>
-                        <View style={styles.delivery}>
-                            <View style={styles.row}>
-                                <Text style={styles.count}>2.4</Text>
-                                <MaterialIcons name="star" color="white" size={12}/>
+                <FlatList 
+                    ListEmptyComponent={
+                        <>
+                            <View style={styles.restaurantInfo}>
+                                <View style={styles.leftContainer}>
+                                    <Text style={styles.title}>Garden Of Taste</Text>
+                                    <Text style={styles.foodtype}>North Indian, Chinese, Mughlai</Text>
+                                    <Text style={styles.address}>Dharampur, Dehradun</Text>
+                                </View>
+                                <View style={styles.rightContainer}>
+                                    <View style={styles.delivery}>
+                                        <View style={styles.row}>
+                                            <Text style={styles.count}>2.4</Text>
+                                            <MaterialIcons name="star" color="white" size={12}/>
+                                        </View>
+                                        <Text style={styles.label}>DELIVERY</Text>
+                                    </View>
+                                    <View style={styles.photos}>
+                                        <Image source={{uri: imageUrl}} style={styles.image}/>
+                                        <Text style={styles.count}>6</Text>
+                                        <Text style={styles.label}>PHOTOS</Text>
+                                    </View>
+                                </View>
                             </View>
-                            <Text style={styles.label}>DELIVERY</Text>
-                        </View>
-                        <View style={styles.photos}>
-                            <Image source={{uri: imageUrl}} style={styles.image}/>
-                            <Text style={styles.count}>6</Text>
-                            <Text style={styles.label}>PHOTOS</Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={styles.tabsContainer}>
-                    <RestaurantTabNavigation/>
-                </View>
+                            <View style={styles.tabsContainer}>
+                                <RestaurantTabNavigation/>
+                            </View>
+                        </>
+                    }/>
             </View>
         )
     }

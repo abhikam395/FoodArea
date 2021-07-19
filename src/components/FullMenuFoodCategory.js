@@ -1,8 +1,19 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import RestaurantFoodItem from './RestaurantFoodItem';
 
-export default class RestaurantRecommended extends Component{
+const FOODS = [
+    {id: 1},
+    {id: 2},
+    {id: 3},
+    {id: 4},
+    {id: 5},
+    {id: 6},
+    {id: 7},
+]
+
+export default class FullMenuFoodCategory extends Component{
 
     constructor(){
         super();
@@ -19,10 +30,11 @@ export default class RestaurantRecommended extends Component{
 
     render(){
         let {visible} = this.state;
+        let {name } = this.props;
         return (
             <View style={styles.container}>
                 <View style={styles.row}>   
-                    <Text style={styles.title}>Recommended</Text>
+                    <Text style={styles.title}>{name}</Text>
                     <TouchableOpacity
                         onPress={this.toggleDropDown} 
                         style={styles.dropDownButton}>
@@ -31,6 +43,14 @@ export default class RestaurantRecommended extends Component{
                             size={30}/>
                     </TouchableOpacity>
                 </View>
+                {visible && (
+                    <FlatList 
+                        data={FOODS}
+                        listKey={name}
+                        keyExtractor={item => item.id.toString()}
+                        renderItem={({item}) => (<RestaurantFoodItem item={item}/>)}
+                        ItemSeparatorComponent={() => <View style={styles.line}/>}/>
+                )}
             </View>
         )
     }
@@ -39,7 +59,7 @@ export default class RestaurantRecommended extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingVertical: 20
+        paddingVertical: 10
     },
     row: {
         flexDirection: 'row',
@@ -53,5 +73,9 @@ const styles = StyleSheet.create({
     },
     dropDownButton: {
         marginLeft: 'auto'
+    },
+    line: {
+        height: .3,
+        backgroundColor: 'lightgrey'
     }
 })

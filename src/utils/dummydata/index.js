@@ -15,3 +15,10 @@ export const FOOD_CATEGORIES = [
 ]
 
 export const RESTAURANTS = FOOD_CATEGORIES;
+
+export const SECTIONS = [
+    {title: 'Recommended', data: ['sdfds', 'sdfsdf', 'sdfsdf', 'sdfsdf']},
+    {title: 'South Indian', data: ['sdfds', 'sdfsdf', 'sdfsdf', 'sdfsdf']},
+    {title: 'Platter', data: ['sdfds', 'sdfsdf', 'sdfsdf', 'sdfsdf']},
+    {title: 'Desserts and Beverages', data: ['sdfds', 'sdfsdf', 'sdfsdf', 'sdfsdf']},
+];

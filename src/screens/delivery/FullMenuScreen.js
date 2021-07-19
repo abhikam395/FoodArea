@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, SectionList, TouchableOpacity} from 'react-native';
 import ToggleSwitch from 'toggle-switch-react-native'
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { RED } from '../../utils/colors';
-import RestaurantRecommended from '../../components/RestaurantRecommended';
+import { GREEN, RED } from '../../utils/colors';
+import FullMenuFoodCategory from '../../components/FullMenuFoodCategory';
 
 export default class FullMenuScreen extends Component{
 
@@ -18,11 +18,11 @@ export default class FullMenuScreen extends Component{
     render(){
         let {isVeg, hasEgg} = this.state;
         return (
-            <View style={styles.container}>
+            <View style={styles.container} >
                 <View style={styles.header}>
                     <ToggleSwitch
                         isOn={isVeg}
-                        onColor="black"
+                        onColor={GREEN}
                         offColor="lightgrey"
                         label="Veg"
                         labelStyle={{ color: "black", fontWeight: "900", fontSize: 12 }}
@@ -31,7 +31,7 @@ export default class FullMenuScreen extends Component{
                     />
                     <ToggleSwitch
                         isOn={hasEgg}
-                        onColor="black"
+                        onColor="orange"
                         offColor="lightgrey"
                         label="Egg"
                         labelStyle={{ color: "black", fontWeight: "900", fontSize: 12 }}
@@ -43,7 +43,10 @@ export default class FullMenuScreen extends Component{
                         <Text style={styles.searchLabel}>Search</Text>
                     </View>
                 </View>
-                <RestaurantRecommended />
+                <FullMenuFoodCategory name="Recommended"/>
+                <FullMenuFoodCategory name="South Indian" />
+                <FullMenuFoodCategory name="Platter" />
+                <FullMenuFoodCategory name="Desserts and Beverages" />
             </View>
         )
     }
@@ -76,5 +79,19 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: 'grey',
         marginLeft: 10
+    },
+    row: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: 100
+    },
+    title: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        letterSpacing: .2,
+        color: '#263238'
+    },
+    dropDownButton: {
+        marginLeft: 'auto'
     }
 })
