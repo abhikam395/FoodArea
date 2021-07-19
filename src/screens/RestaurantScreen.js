@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, FlatList } from 'react-native';
 import RestaurantHeader from '../components/RestaurantHeader';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import RestaurantTabNavigation from '../navigations/RestaurantTabNavigation';
+import DeliveryMenuFloatingComponent from '../components/DeliveryMenuFloatingComponent';
 
 const imageUrl = "https://images.unsplash.com/photo-1542528180-a1208c5169a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2QlMjBjb2xsZWN0aW9ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80";
 
@@ -11,6 +12,7 @@ export default class RestaurantScreen extends Component{
         return (
             <View style={styles.container}>
                 <RestaurantHeader />
+                <DeliveryMenuFloatingComponent />
                 <FlatList 
                     ListEmptyComponent={
                         <>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import RestaurantFoodItem from './RestaurantFoodItem';
@@ -13,7 +13,7 @@ const FOODS = [
     {id: 7},
 ]
 
-export default class FullMenuFoodCategory extends Component{
+export default class FullMenuFoodCategory extends PureComponent{
 
     constructor(){
         super();
