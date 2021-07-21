@@ -3,13 +3,13 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import { RED } from '../../utils/colors';
+import { GREEN, RED } from '../../utils/colors';
 
 const menuImage = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/menu-flyer-template-5632286b490608db0301a085b91cde86_screen.jpg?ts=1561491978";
 
 export default class DiningScreen extends Component{
+    
     render(){
-        console.log('dining')
         return (
             <View style={styles.container}>
                 <View style={styles.item}>
@@ -67,6 +67,60 @@ export default class DiningScreen extends Component{
                         <Text style={styles.fullMenuButtonLabel}>See full menu</Text>
                     </TouchableOpacity>
                 </View>
+                <View style={styles.detailContainer}>
+                    <Text style={styles.detailTitle}>Details</Text>
+                    <View style={{marginVertical: 15}}>
+                        <Text style={styles.detailLabel}>CUISINES</Text>
+                        <View style={styles.cuisineList}>
+                            <Text style={styles.cuisine}>North Indian</Text>
+                            <Text style={styles.cuisine}>Chinese</Text>
+                            <Text style={styles.cuisine}>Fast Food</Text>
+                        </View>
+                    </View>
+                    <View style={styles.row}>
+                        <Text style={styles.detailLabel}>AVERAGE COST</Text>
+                        <Ionicons 
+                            name="information-circle-outline" 
+                            size={16}
+                            style={styles.infoIcon}
+                            color="grey"/>
+                    </View>
+                    <Text style={styles.otherLabel}>450 for two people (approx.)</Text>
+                    <Text style={styles.additionInfo}>Exclusive of applicable taxes and charges, if any</Text>
+                    <View style={{marginVertical: 15}}>
+                        <Text style={styles.otherLabel}>Cash and Cards accepted</Text>
+                        <Text style={styles.otherLabel}>Digital payments accepted</Text>
+                    </View>
+                    <View style={styles.otherInfoContainer}>
+                        <Text style={styles.detailLabel}>OTHER INFO</Text>
+                        <View style={{marginTop: 10}}>
+                            <View style={styles.row}>
+                                <Ionicons 
+                                    name="checkmark-circle-outline" 
+                                    color={GREEN} 
+                                    size={20}/>
+                                <Text style={styles.otherInfoLabel}>Home Delivery</Text>
+                            </View>
+                            <View style={styles.row}>
+                                <Ionicons 
+                                    name="checkmark-circle-outline" 
+                                    color={GREEN} row
+                                    row
+                                    row
+                                    row
+                                    size={20}/>
+                                <Text style={styles.otherInfoLabel}>Takeaway Available</Text>
+                            </View>
+                            <View style={styles.row}>
+                                <Ionicons 
+                                    name="checkmark-circle-outline" 
+                                    color={GREEN} 
+                                    size={20}/>
+                                <Text style={styles.otherInfoLabel}>Indoor Seating</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
             </View>
         )
     }
@@ -75,11 +129,6 @@ export default class DiningScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    row: {
-        flexDirection: 'row',
-        flex: 1,
-        alignItems: 'center'
     },
     item: {
         flexDirection: 'row',
@@ -95,6 +144,9 @@ const styles = StyleSheet.create({
     },
     directionButton: {
         marginLeft: 'auto'
+    },    
+    row: {
+        flexDirection: 'row',
     },
     directionLabel: {
         color: RED,
@@ -165,5 +217,41 @@ const styles = StyleSheet.create({
     fullMenuButtonLabel: {
         color: RED,
         fontSize: 16
+    },
+    detailContainer: {
+
+    },
+    cuisineList: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10
+    },
+    detailTitle: {
+        fontSize: 16
+    },
+    detailLabel: {
+        marginBottom: 10,
+        color: 'grey',
+        fontSize: 12
+    },
+    cuisine: {
+        color: RED,
+        marginRight: 20,
+        fontSize: 12
+    },
+    infoIcon: {
+        marginLeft: 5
+    },
+    otherLabel: {
+        fontSize: 12
+    },
+    additionInfo: {
+        fontSize: 12,
+        color: 'grey',
+        marginTop: 5
+    },
+    otherInfoLabel: {
+        marginLeft: 5,
+        color: 'grey'
     }
 })
