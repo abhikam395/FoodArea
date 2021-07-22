@@ -25,7 +25,8 @@ export default function(){
                 labelStyle: {
                     letterSpacing: 1.5
                 },
-            }}>
+            }}
+            initialRouteName="Reviews">
             <Tab.Screen name="Delivery" component={DeliveryScreen} />
             <Tab.Screen name="Dining" component={DiningScreen} />
             <Tab.Screen name="Reviews" component={ReviewsScreen} />

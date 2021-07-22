@@ -21,7 +21,7 @@ export default function MainNavigation(){
     return (
         <NavigationContainer theme={MyTheme}>
             <MainStack.Navigator
-                initialRouteName="Login"
+                initialRouteName="Restaurant"
                 screenOptions={{headerShown: false}}>
                 <MainStack.Screen 
                     name="Home" 
