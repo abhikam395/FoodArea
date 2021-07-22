@@ -11,7 +11,7 @@ export default class RestaurantScreen extends Component{
     render(){
         return (
             <View style={styles.container}>
-                <RestaurantHeader />
+                <RestaurantHeader {...this.props}/>
                 <DeliveryMenuFloatingComponent />
                 <FlatList 
                     ListEmptyComponent={
