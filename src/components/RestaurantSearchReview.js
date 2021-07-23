@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 1,
         marginVertical: 10,
         alignItems: 'center',
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
     },
     input: {
         fontSize: 15,

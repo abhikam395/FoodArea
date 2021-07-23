@@ -54,6 +54,7 @@ export default class RestaurantSearchTags extends Component{
     render(){
         return (
             <FlatList
+                style={styles.container}
                 data={list}
                 horizontal={true}
                 keyExtractor={item => item.id.toString()}
@@ -66,13 +67,13 @@ export default class RestaurantSearchTags extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        maxHeight: 50
     },
     item: {
         height: 33,
         paddingHorizontal: 10,
-        borderWidth: 1,
-        borderRadius: 5,
+        borderWidth: .5,
+        borderRadius: 10,
         borderColor: RED,
         marginRight: 10,
         marginVertical: 10,

@@ -3,9 +3,11 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import RestaurantReviewHighlights from '../../components/RestaurantReviewHighlights';
-import RestaurantSearchTags from '../../components/RestaurantSeachTags';
+import RestaurantSearchTags from '../../components/RestaurantSearchTags';
 import RestaurantSearchReview from '../../components/RestaurantSearchReview';
 import { GREEN, RED } from '../../utils/colors';
+import RestaurantReviewList from '../../components/RestaurantReviewList';
+import RateTagComponent from '../../components/RateTagComponent';
 
 export default class ReviewsScreen extends Component{
     render(){
@@ -27,28 +29,14 @@ export default class ReviewsScreen extends Component{
                 </View>
                 <View style={styles.ratingContainer}>
                     <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                        <View style={styles.rateItem}>
-                            <Text style={styles.rating}>4.1</Text>
-                            <MaterialIcons 
-                                name="star" 
-                                color="white"
-                                size={10}
-                            />
-                        </View>
+                        <RateTagComponent color="green" rating={4.2}/>
                         <View style={{marginLeft: 5}}>
                             <Text style={styles.totalDelivery}>4,203 DELIVERY</Text>
                             <View style={styles.totalDeliveryLine}/>
                         </View>
                     </View>
                     <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                        <View style={styles.rateItem}>
-                            <Text style={styles.rating}>4.1</Text>
-                            <MaterialIcons 
-                                name="star" 
-                                color="white"
-                                size={10}
-                            />
-                        </View>
+                        <RateTagComponent color="green" rating={3.4} />
                         <View style={{marginLeft: 5}}>
                             <Text style={styles.totalDelivery}>203 DINING</Text>
                             <View style={styles.totalDeliveryLine}/>
@@ -63,6 +51,7 @@ export default class ReviewsScreen extends Component{
                 <RestaurantSearchReview />
                 <RestaurantSearchTags />
                 <View style={styles.line}/>
+                <RestaurantReviewList />
             </View>
         )
     }
