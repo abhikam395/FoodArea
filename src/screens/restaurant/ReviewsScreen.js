@@ -10,6 +10,17 @@ import RestaurantReviewList from '../../components/RestaurantReviewList';
 import RateTagComponent from '../../components/RateTagComponent';
 
 export default class ReviewsScreen extends Component{
+
+    constructor(){
+        super();
+        this.navigateToAddReview = this.navigateToAddReview.bind(this);
+    }
+
+    navigateToAddReview(){
+        let {navigation} = this.props;
+        navigation.navigate('AddReview');
+    }
+
     render(){
         return (
             <View style={styles.container}>
@@ -19,7 +30,8 @@ export default class ReviewsScreen extends Component{
                         <Text style={styles.label}>Share your experience to help others</Text>
                     </View>
                     <TouchableOpacity
-                        style={styles.reviewButton}>
+                        style={styles.reviewButton}
+                        onPress={this.navigateToAddReview}>
                         <FontAwesome 
                             name="pencil-square-o" 
                             color={RED} 

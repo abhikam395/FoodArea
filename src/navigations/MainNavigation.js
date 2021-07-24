@@ -6,6 +6,9 @@ import LoginScreen from '../screens/LoginScreen';
 import LocationScreen from '../screens/LocationScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import RestaurantScreen from '../screens/RestaurantScreen';
+import AddReviewScreen from '../screens/AddReviewScreen';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { TouchableOpacity } from 'react-native';
 
 const MainStack = createStackNavigator();
 
@@ -18,10 +21,15 @@ const MyTheme = {
 };
 
 export default function MainNavigation(){
+
+    function goBack(navigation){
+        navigation.goBack();
+    }
+
     return (
         <NavigationContainer theme={MyTheme}>
             <MainStack.Navigator
-                initialRouteName="Restaurant"
+                initialRouteName="AddReview"
                 screenOptions={{headerShown: false}}>
                 <MainStack.Screen 
                     name="Home" 
@@ -41,6 +49,28 @@ export default function MainNavigation(){
                 <MainStack.Screen
                     name="Restaurant"
                     component={RestaurantScreen}
+                />
+                <MainStack.Screen
+                    name="AddReview"
+                    component={AddReviewScreen}
+                    options={({navigation}) => (
+                        {
+                            headerShown: true,
+                            headerTitleStyle: {
+                                fontSize: 18
+                            },
+                            headerTitleAlign: 'center',
+                            headerLeft: () => (
+                                <TouchableOpacity
+                                    onPress={() => goBack(navigation)}>
+                                    <MaterialIcons name="clear" size={22}/>
+                                </TouchableOpacity>
+                            ),
+                            headerLeftContainerStyle: {
+                                paddingLeft: 10
+                            }
+                        }
+                    )}
                 />
             </MainStack.Navigator>
         </NavigationContainer>
